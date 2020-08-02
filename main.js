@@ -46,10 +46,29 @@ const words = [
 function init() {
   // Load word from array
   showWord(words);
+  // Start matching on word input
+  wordInput.addEventListener("input", startMatch);
   // Call countdown every second
   setInterval(countdown, 1000);
   // CHeck game status
   setInterval(checkStatus, 50);
+}
+
+// Start Match
+function startMatch() {
+  if (matchWords()) {
+  }
+}
+
+// Match currentWord to wordInput
+function matchWords() {
+  if (wordInput.value === currentWord.innerHTML) {
+    message.innerHTML = "Correct!!!";
+    return true;
+  } else {
+    message.innerHTML = "";
+    return false;
+  }
 }
 
 // Pick and show random word
