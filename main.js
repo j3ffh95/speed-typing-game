@@ -47,3 +47,11 @@ function init() {
   // Load word from array
   showWord(words);
 }
+
+// Pick and show random word
+function showWord(words) {
+  // Generate random array index
+  const randIndex = Math.floor(Math.random() * words.length);
+  // Output a random word
+  currentWord.innerHTML = words[randIndex];
+}
