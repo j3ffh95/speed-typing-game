@@ -1,3 +1,5 @@
+window.addEventListener("load", init);
+
 // Global Variables
 let time = 5,
   score = 0,
@@ -39,3 +41,9 @@ const words = [
   "space",
   "definition",
 ];
+
+// Initialize Game
+function init() {
+  // Load word from array
+  showWord(words);
+}
