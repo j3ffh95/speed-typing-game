@@ -57,6 +57,17 @@ function init() {
 // Start Match
 function startMatch() {
   if (matchWords()) {
+    isPlaying = true;
+    time = 6;
+    showWord(words);
+    wordInput.value = "";
+    score++;
+  }
+  // If score is -1 then display 0
+  if (score === -1) {
+    scoreDisplay.innerHTML = 0;
+  } else {
+    scoreDisplay.innerHTML = score;
   }
 }
 
@@ -96,5 +107,6 @@ function countdown() {
 function checkStatus() {
   if (!isPlaying && time === 0) {
     message.innerHTML = "Game Over!!!";
+    score = -1;
   }
 }
